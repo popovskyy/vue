@@ -1,1 +1,0 @@
-import{_ as o,o as e,c as r,t as s}from"./index-OZkxt88M.js";const n={name:"About",data(){return{msg:"hello world2"}}};function a(c,l,p,_,t,u){return e(),r("h1",null,s(t.msg),1)}const f=o(n,[["render",a]]);export{f as default};
