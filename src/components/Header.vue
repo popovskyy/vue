@@ -20,6 +20,7 @@
             </div>
         </nav>
     </header>
+    <h1 class="container mx-auto flex justify-start items-center py-5 px-4">Lesson - 114</h1>
 </template>
 
 <script>
@@ -36,7 +37,6 @@ export default {
         toggleAuthModal() {
             this.modalStore.isOpen = !this.modalStore.isOpen;
             // this.isOpen = !this.isOpen;  ---> another way to get and change store
-            console.log(this.modalStore.isOpen);
         }
     }
 };
