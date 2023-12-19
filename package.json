@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy":  "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@vee-validate/rules": "^4.12.3",
+    "firebase": "^8.10.1",
     "pinia": "^2.1.7",
     "vee-validate": "^4.12.3",
     "vue": "^3.3.10",
