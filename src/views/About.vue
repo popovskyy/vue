@@ -7,7 +7,7 @@ export default {
   name: 'About',
   data() {
     return {
-      msg: 'hello world2'
+      msg: 'About Page!'
     }
   }
 }

@@ -56,7 +56,9 @@ export default {
         };
     },
     methods: {
-        ...mapActions(useUserStore, ['authenticate']),
+        ...mapActions(useUserStore, {
+            authenticate: 'authenticate'
+        }),
         async login(values) {
             this.login_in_submission = true;
             this.login_show_alert = true;
@@ -68,7 +70,7 @@ export default {
             } catch (e) {
                 this.login_in_submission = false;
                 this.login_alert_variant = 'bg-red-500';
-                this.login_alert_msg = 'Something went wrong. Please try again later.';
+                this.login_alert_msg = 'Incorrect Email or Password';
 
                 return;
             }
