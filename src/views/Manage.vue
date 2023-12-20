@@ -179,11 +179,6 @@
 
 <script>
 export default {
-  name: 'Manage',
-  data() {
-    return {
-      msg: 'Manage Page!'
-    }
-  }
-}
+    name: 'Manage'
+};
 </script>
