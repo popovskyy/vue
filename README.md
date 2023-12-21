@@ -28,6 +28,12 @@ npm run dev
 npm run build
 ```
 
+### Deploy on GH-pages
+
+```sh
+npm run deploy
+```
+
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
