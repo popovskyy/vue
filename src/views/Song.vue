@@ -3,7 +3,7 @@
     <section class="w-full mb-8 py-14 text-center text-white relative">
         <div
             class="absolute inset-0 w-full h-full box-border bg-contain music-bg"
-            style="background-image: url(/assets/img/song-header.png)"
+            :style="{ backgroundImage: getImagePath('song-header.png') }"
         ></div>
         <div class="container mx-auto flex items-center">
             <!-- Play/Pause Button -->
@@ -149,6 +149,11 @@ export default {
         }
 
         this.song = docSnapshot.data();
-    }
+    },
+    methods: {
+        getImagePath(imageName) {
+            return `url(${import.meta.env.BASE_URL}/assets/img/${imageName})`;
+        }
+    },
 };
 </script>
