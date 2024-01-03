@@ -21,7 +21,7 @@ const routes = [
         path: '/manage',
         component: Manage,
         meta: {
-            requiresAuth: true
+            requiresAuth: 0
         }
     },
     {
