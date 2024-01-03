@@ -12,10 +12,8 @@ export default defineStore('player', {
     }),
     actions: {
         async newSong(song) {
-            if (this.sound instanceof Howl && this.sound.playing()) {
-                this.sound.pause();
-
-                return;
+            if (this.sound instanceof Howl) {
+                this.sound.unload();
             }
 
             this.current_song = song;

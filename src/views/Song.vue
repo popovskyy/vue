@@ -9,11 +9,21 @@
             <div class="container mx-auto flex items-center">
                 <!-- Play/Pause Button -->
                 <button
-                    @click.prevent="newSong(song)"
+                    v-if="song.uid === current_song.uid"
+                    @click.prevent="toggleAudio"
                     type="button"
                     class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full focus:outline-none"
                 >
                     <i class="fas" :class="{ 'fa-play' : !playing, 'fa-pause': playing}"></i>
+                </button>
+                <button
+                    v-else
+                    @click.prevent="newSong(song)"
+
+                    type="button"
+                    class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full focus:outline-none"
+                >
+                    <i class="fas fa-play"></i>
                 </button>
                 <div class="z-50 text-left ml-8">
                     <!-- Song Info -->
@@ -100,7 +110,7 @@ export default {
     },
     computed: {
         ...mapState(useUserStore, ['userLoggedIn', 'playing']),
-        ...mapState(usePlayerStore, ['playing']),
+        ...mapState(usePlayerStore, ['playing', 'current_song']),
         sortedComments() {
             return this.comments.slice().sort((a, b) => {
                 if (this.sort === '1') {
@@ -128,7 +138,8 @@ export default {
     },
     methods: {
         ...mapActions(usePlayerStore, {
-            newSong: 'newSong'
+            newSong: 'newSong',
+            toggleAudio: 'toggleAudio'
         }),
         getImagePath(imageName) {
             return `url(${import.meta.env.BASE_URL}/assets/img/${imageName})`;
