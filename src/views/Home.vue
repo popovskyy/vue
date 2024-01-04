@@ -8,9 +8,9 @@
             ></div>
             <div class="container mx-auto">
                 <div class="text-white main-header-content">
-                    <h1 class="font-bold text-5xl mb-5">Lesson - 205</h1>
+                    <h1 class="font-bold text-5xl mb-5">Music Player</h1>
                     <p class="w-full md:w-8/12 mx-auto">
-                        Login Credentials: test@test.com / qwerty123
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste necessitatibus perferendis repudiandae sit ut voluptatibus.
                     </p>
                 </div>
             </div>

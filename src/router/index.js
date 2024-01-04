@@ -4,6 +4,7 @@ import About from '@/views/About.vue';
 import Manage from '@/views/Manage.vue';
 import Song from '@/views/Song.vue';
 import useUserStore from '@/stores/user';
+import MyAccount from '@/views/MyAccount.vue';
 
 const routes = [
     {
@@ -21,7 +22,15 @@ const routes = [
         path: '/manage',
         component: Manage,
         meta: {
-            requiresAuth: 0
+            requiresAuth: 1
+        }
+    },
+    {
+        name: 'my_account',
+        path: '/my-account',
+        component: MyAccount,
+        meta: {
+            requiresAuth: 1
         }
     },
     {

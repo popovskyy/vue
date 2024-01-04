@@ -27,6 +27,12 @@
                     </template>
                 </ul>
             </div>
+
+            <div class="px-2 text-white" v-if="userStore.userLoggedIn && userDisplayName">
+                <router-link class="px-2 text-white" :to="{ name: 'my_account'}">
+                    Hello, {{userDisplayName}}
+                </router-link>
+            </div>
         </nav>
     </header>
 </template>
@@ -39,8 +45,8 @@ import useUserStore from '@/stores/user';
 export default {
     name: 'Header',
     computed: {
-        ...mapStores(useModalStore, useUserStore)
-        // ...mapWritableState(useModalStore, ['isOpen'])  ---> another way to get and change store
+        ...mapStores(useModalStore, useUserStore),
+        ...mapWritableState(useUserStore, ['userDisplayName'])
     },
     methods: {
         toggleAuthModal() {

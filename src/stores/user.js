@@ -3,7 +3,8 @@ import { auth, usersCollection } from '@/includes/firebase.js';
 
 export default defineStore('user', {
     state: () => ({
-        userLoggedIn: false
+        userLoggedIn: false,
+        userDisplayName: false
     }),
     actions: {
         async register(values) {
@@ -30,13 +31,22 @@ export default defineStore('user', {
             await auth.signInWithEmailAndPassword(values.email, values.password);
 
             this.userLoggedIn = true;
+        },
 
+        async updateInfo(values) {
+            const currentUser = await auth.currentUser;
+            await currentUser.updateProfile({
+                displayName: values.name
+            });
+
+            this.userDisplayName = values.name;
         },
 
         async signOut() {
             await auth.signOut();
 
             this.userLoggedIn = false;
+            this.userDisplayName = false;
         }
     }
 });

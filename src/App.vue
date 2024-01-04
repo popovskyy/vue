@@ -21,11 +21,12 @@ export default {
         Player
     },
     computed: {
-        ...mapWritableState(useUserStore, ['userLoggedIn'])
+        ...mapWritableState(useUserStore, ['userLoggedIn', 'userDisplayName'])
     },
     created() {
         if (auth.currentUser) {
             this.userLoggedIn = true;
+            this.userDisplayName = auth.currentUser.displayName;
         }
     }
 };
